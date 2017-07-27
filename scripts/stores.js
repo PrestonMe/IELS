@@ -12,6 +12,7 @@ $(document).ready(function() {
 
   let nameParser = urlParams[0].split('=').slice(1).shift().split('');
 
+  // Handles any spacing in names as they get changed to + symbols in the url
   while (nameParser.indexOf('+') !== -1) {
     nameParser[nameParser.indexOf('+')] = " ";
   }
@@ -26,6 +27,7 @@ $(document).ready(function() {
   $('.email').text(() => email);
   $('.zip').text(() => zip);
 
+  // Selects a store based on zip code
   let location = zip < 33334 ? stores[0] : zip > 66667 ? stores[2] : stores[1];
 
   $('.location').text(() => location[0]);

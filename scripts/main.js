@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   let loan = { amount: '', duration: '' };
 
-  $('#loan').change(function(e) {
+  $('.loan').change(function(e) {
     loan.duration = e.target.value;
     if(loan.amount && loan.duration) monthlyPayment();
   });
@@ -47,7 +47,7 @@ $(document).ready(function() {
     let monthlyPayment = (loan.amount * (interest / (1 - Math.pow(1 + interest,-loan.duration)))).toFixed(2);
 
     $('.payment').text(function() {
-      return 'Your Estimated Monthly Payment is $' + monthlyPayment + '.'
+      return 'Your Estimated Monthly Payment is $' + monthlyPayment
     });
   }
 
