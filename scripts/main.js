@@ -25,7 +25,10 @@ $(document).ready(function() {
   $('.form').on('submit', function(e) {
     let validForm = true;
 
-    let name = $('.name').val();
+    // Removes whitespace before or after name
+    let name = $('.name').val().trim();
+    $('.name').val(name);
+
     let phone = $('.phone').val();
     let email = $('.email').val();
     let zip = $('.zip').val();

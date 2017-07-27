@@ -11,6 +11,7 @@ $(document).ready(function() {
   let urlParams = decodeURIComponent(window.location.search.substring(1)).split('&');
 
   let nameParser = urlParams[0].split('=').slice(1).shift().split('');
+  let phoneFormat = urlParams[1].split('=').slice(1)[0];
 
   // Handles any spacing in names as they get changed to + symbols in the url
   while (nameParser.indexOf('+') !== -1) {
@@ -18,7 +19,7 @@ $(document).ready(function() {
   }
 
   const name = nameParser.join('');
-  const phone = urlParams[1].split('=').slice(1);
+  const phone = '(' + phoneFormat.substring(0, 3) + ') ' + phoneFormat.substring(3, 6) + '-' + phoneFormat.substring(6, 10);
   const email = urlParams[2].split('=').slice(1);
   const zip = urlParams[3].split('=').slice(1);
 
@@ -33,6 +34,6 @@ $(document).ready(function() {
   $('.location').text(() => location[0]);
   $('.address-one').text(() => location[1]);
   $('.address-two').text(() => location[2]);
-  $('.thanks').text(() => 'Thanks ' + name + '!');
+  $('.thanks').text(() => 'Thanks ' + name + ', now that we have your information a Loan Nation agent will contact you shortly!');
 
 });
