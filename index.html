@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="header">Loan Nation</header>
+
+    <main class="home-container">
+
+      <!-- Loan Calculator -->
+      <section>
+        <h1>Loan Calculator</h1>
+        <div class="input-row">
+          <div class="input-label">
+            <span>Loan Amount</span>
+            <span>$</span>
+          </div>
+          <input class="loan-amt" placeholder="Enter Amount" maxlength="7">
+        </div>
+        <p class="error">Please enter a value between 1 and 1000000</p>
+        <div class="input-row">
+          <div class="input-label">
+            <span>Loan Period</span>
+          </div>
+          <select id="loan">
+            <option selected disabled>Select Loan Period</option>
+            <option value="12">12 Months</option>
+            <option value="18">18 Months</option>
+            <option value="24">24 Months</option>
+          </select>
+        </div>
+        <p class="payment"></p>
+      </section>
+
+      <!-- Client Info Form -->
+      <section>
+        <h1>About You</h1>
+        <form class="form" action="./stores.html" method="get">
+          <div class="input-row">
+            <div class="input-label">
+              <span>Full Name</span>
+            </div>
+            <input class="name" placeholder="Name" name="name">
+          </div>
+          <p class="error">Please enter your name</p>
+          <div class="input-row">
+            <div class="input-label">
+              <span>Telephone Number</span>
+            </div>
+            <input class="phone" placeholder="Phone" name="phone" maxlength="10">
+          </div>
+          <p class="error">Please enter a 10 digit phone number</p>
+          <div class="input-row">
+            <div class="input-label">
+              <span>Email Address</span>
+            </div>
+            <input class="email" placeholder="Email" name="email">
+          </div>
+          <p class="error">Please enter a valid email address</p>
+          <div class="input-row">
+            <div class="input-label">
+              <span>Zip Code</span>
+            </div>
+            <input class="zip" placeholder="Zip Code" name="zip" maxlength="5">
+          </div>
+          <p class="error">Please enter a five digit zip code</p>
+          <button class="submit-btn">Click Here To Find An Agent!</button>
+        </form>
+      </section>
+
+    </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="./scripts/main.js"></script>
+  </body>
+</html>
